@@ -7,7 +7,7 @@ class VlCookieStatementPage extends Page {
   }
 
   async load() {
-    await super.load(Config.baseUrl + '/demo/vl-cookie-statement.html');
+    await super.load(Config.baseUrl + '/demo/vl-cookie-statement-demo.html');
   }
 
   async _getCookieStatement(selector) {

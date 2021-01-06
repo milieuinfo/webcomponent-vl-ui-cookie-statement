@@ -5,6 +5,7 @@ import '/node_modules/vl-ui-introduction/dist/vl-introduction.js';
 import '/node_modules/vl-ui-typography/dist/vl-typography.js';
 import '/node_modules/vl-ui-contact-card/dist/vl-contact-card.js';
 import '/node_modules/vl-ui-infoblock/dist/vl-infoblock.js';
+import '/node_modules/vl-ui-properties/dist/vl-properties.js';
 import '/node_modules/vl-ui-link/dist/vl-link.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
@@ -32,6 +33,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-introduction/dist/style.css';
             @import '/node_modules/vl-ui-link/dist/style.css';
             @import '/node_modules/vl-ui-icon/dist/style.css';
+            @import '/node_modules/vl-ui-properties/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         </style>
     `);
@@ -155,7 +157,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                             <dt is="vl-property-term">E-mail</dt>
                             <dd is="vl-property-value"><a is="vl-link" href="mailto:omgeving@vlaanderen.be">omgeving@vlaanderen.be<span is="vl-icon" data-vl-icon="mail" data-vl-after></span></a></dd>
                             <dt is="vl-property-term">Website</dt>
-                            <dd is="vl-property-value"><a is="vl-link" href="http://onderwijs.vlaanderen.be" target="_blank">http://onderwijs.vlaanderen.be<span is="vl-icon" data-vl-icon="external" data-vl-after></span></a></dd>
+                            <dd is="vl-property-value"><a is="vl-link" href="https://omgeving.vlaanderen.be" target="_blank">https://omgeving.vlaanderen.be<span is="vl-icon" data-vl-icon="external" data-vl-after></span></a></dd>
                         </dl>
                         </vl-properties>
                     </vl-contact-card>
