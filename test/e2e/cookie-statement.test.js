@@ -10,7 +10,7 @@ describe('vl-cookie-statement', async () => {
   });
 
   it('als gebruiker kan in de cookie pagina zien', async () => {
-    const page = await vlCookieStatementPage.getCookieElement();
+    const page = await vlCookieStatementPage.getCookieStatementElement();
     await assert.eventually.isTrue(page.isDisplayed());
   });
 });
