@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../../src/vl-cookie.js"></script>
+</head>
+
+<body>
+  <test-fixture id="vl-cookie-fixture">
+    <template>
+      <vl-cookie 
+        data-vl-title="Captcha contactformulier" 
+        data-vl-name="NID" 
+        data-vl-purpose="reCaptcha is een beveiligingsmaatregel die controleert of u een legitieme bezoeker bent, om te voorkomen dat een bot of script het formulier misbruikt om spam mee te versturen."
+        data-vl-domain="google.com"
+        data-vl-processor="Google"
+        data-vl-validity="Permanente cookie met een geldigheid van 6 maanden">
+      </vl-cookie>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('vl-cookie', () => {
+      test('toont de cookie titel', () => {
+        const cookie = fixture('vl-cookie-fixture');
+        const title = cookie.shadowRoot.querySelector('h1');
+        assert.equal(title.textContent, cookie.dataset.vlTitle);
+      });
+
+      test('toont de cookie gegevens op basis van data attributen', () => {
+        const cookie = fixture('vl-cookie-fixture');
+        const values = cookie.shadowRoot.querySelectorAll('[is="vl-property-value"]');
+        assert.equal(values[0].textContent, cookie.dataset.vlName);
+        assert.equal(values[1].textContent, cookie.dataset.vlPurpose);
+        assert.equal(values[2].textContent, 'Cookie');
+        assert.equal(values[3].textContent, cookie.dataset.vlDomain);
+        assert.equal(values[4].textContent, cookie.dataset.vlProcessor);
+        assert.equal(values[5].textContent, cookie.dataset.vlValidity);
+      });
+    });
+  </script>
+</body>
+
+</html>
