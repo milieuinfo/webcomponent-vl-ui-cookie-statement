@@ -15,7 +15,7 @@ import '/node_modules/vl-ui-properties/dist/vl-properties.js';
  *
  */
 export class VlCookie extends vlElement(HTMLElement) {
-  constructor() {
+  constructor({title, name, purpose, domain, processor, validity} = {}) {
     super(`
         <style>
             @import '/node_modules/vl-ui-cookie-statement/dist/style.css';
@@ -25,20 +25,20 @@ export class VlCookie extends vlElement(HTMLElement) {
 
     this._element.insertAdjacentHTML('afterend', `
         <vl-properties>
-            <h1>${this.dataset.vlTitle}</h1>
+            <h1>${title || this.dataset.vlTitle}</h1>
             <dl is="vl-properties-list">
                 <dt is="vl-property-term">Naam</dt>
-                <dd is="vl-property-value">${this.dataset.vlName}</dd>
+                <dd is="vl-property-value">${name || this.dataset.vlName}</dd>
                 <dt is="vl-property-term">Doel</dt>
-                <dd is="vl-property-value">${this.dataset.vlPurpose}</dd>
+                <dd is="vl-property-value">${purpose || this.dataset.vlPurpose}</dd>
                 <dt is="vl-property-term">Type</dt>
                 <dd is="vl-property-value">Cookie</dd>
                 <dt is="vl-property-term">Domein</dt>
-                <dd is="vl-property-value">${this.dataset.vlDomain}</dd>
+                <dd is="vl-property-value">${domain || this.dataset.vlDomain}</dd>
                 <dt is="vl-property-term">Verwerker</dt>
-                <dd is="vl-property-value">${this.dataset.vlProcessor}</dd>
+                <dd is="vl-property-value">${processor || this.dataset.vlProcessor}</dd>
                 <dt is="vl-property-term">Geldigheid</dt>
-                <dd is="vl-property-value">${this.dataset.vlValidity}</dd>
+                <dd is="vl-property-value">${validity || this.dataset.vlValidity}</dd>
             </dl>
         </vl-properties>
     `);
