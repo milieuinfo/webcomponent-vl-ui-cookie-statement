@@ -6,7 +6,7 @@
   <script src="../../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../../web-component-tester/browser.js"></script>
 
-  <script type="module" src="../../src/vl-cookie.js"></script>
+  <script type="module" src="../../src/vl-cookie-statement-all.js"></script>
 </head>
 
 <body>
@@ -20,6 +20,18 @@
         data-vl-processor="Google"
         data-vl-validity="Permanente cookie met een geldigheid van 6 maanden">
       </vl-cookie>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-sticky-session-cookie-fixture">
+    <template>
+      <vl-sticky-session-cookie></vl-sticky-session-cookie>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-jsessionid-cookie-fixture">
+    <template>
+      <vl-jsessionid-cookie></vl-jsessionid-cookie>
     </template>
   </test-fixture>
 
@@ -40,6 +52,27 @@
         assert.equal(values[3].textContent, cookie.dataset.vlDomain);
         assert.equal(values[4].textContent, cookie.dataset.vlProcessor);
         assert.equal(values[5].textContent, cookie.dataset.vlValidity);
+      });
+
+      test('toont bij cookie extends de cookie titel', () => {
+        ['sticky-session', 'jsessionid'].forEach((id) => {
+          const cookie = fixture(`vl-${id}-cookie-fixture`);
+          const title = cookie.shadowRoot.querySelector('h1');
+          assert.isDefined(title.textContent);
+        });
+      });
+
+      test('toont bij cookie extends de cookie gegevens op basis van constructie parameters', () => {
+        ['sticky-session', 'jsessionid'].forEach((id) => {
+          const cookie = fixture(`vl-${id}-cookie-fixture`);
+          const values = cookie.shadowRoot.querySelectorAll('[is="vl-property-value"]');
+          assert.isDefined(values[0].textContent);
+          assert.isDefined(values[1].textContent);
+          assert.isDefined(values[2].textContent);
+          assert.isDefined(values[3].textContent);
+          assert.isDefined(values[4].textContent);
+          assert.isDefined(values[5].textContent);
+        });
       });
     });
   </script>

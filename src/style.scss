@@ -17,6 +17,6 @@
     display: block;
 }
 
-vl-sticky-session-cookie, vl-cookie:not(:last-of-type) {
+vl-jsessionid-cookie, vl-sticky-session-cookie, vl-cookie:not(:last-of-type) {
     margin-bottom: 1.8rem;
 }
