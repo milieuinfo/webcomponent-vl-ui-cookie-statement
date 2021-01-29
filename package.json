@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"vl-ui-contact-card": "^1.0.0",
-		"vl-ui-core": "^7.0.2",
+		"vl-ui-core": "^7.1.0",
 		"vl-ui-grid": "^3.2.0",
 		"vl-ui-icon": "^5.2.1",
 		"vl-ui-infoblock": "^3.0.8",
@@ -51,7 +51,7 @@
 	},
 	"peerDependencies": {
 		"vl-ui-contact-card": "^1.0.0",
-		"vl-ui-core": "^7.0.2",
+		"vl-ui-core": "^7.1.0",
 		"vl-ui-grid": "^3.2.0",
 		"vl-ui-icon": "^5.2.1",
 		"vl-ui-infoblock": "^3.0.8",
@@ -68,6 +68,6 @@
 		"vl-ui-footer": "^3.3.2",
 		"vl-ui-header": "^3.3.2",
 		"vl-ui-template": "^3.1.1",
-		"vl-ui-util": "^5.3.6"
+		"vl-ui-util": "^5.3.7"
 	}
 }
