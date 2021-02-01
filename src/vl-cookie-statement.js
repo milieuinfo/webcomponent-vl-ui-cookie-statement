@@ -9,6 +9,9 @@ import '/node_modules/vl-ui-properties/dist/vl-properties.js';
 import '/node_modules/vl-ui-link/dist/vl-link.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
+import '/src/vl-header-cookie.js';
+import '/src/vl-header-authentication-cookie.js';
+import '/src/vl-authentication-cookie.js';
 import '/src/vl-sticky-session-cookie.js';
 import '/src/vl-jsessionid-cookie.js';
 
@@ -101,6 +104,9 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                                 <div id="cookie-usage" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     <h2 is="vl-h2">Gebruikte cookies</h2>
+                                    <vl-header-cookie></vl-header-cookie>
+                                    <vl-header-authentication-cookie></vl-header-authentication-cookie>
+                                    <vl-authentication-cookie></vl-authentication-cookie>
                                     <vl-jsessionid-cookie></vl-jsessionid-cookie>
                                     <vl-sticky-session-cookie></vl-sticky-session-cookie>
                                     <slot></slot>
