@@ -35,6 +35,24 @@
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-header-cookie-fixture">
+    <template>
+      <vl-header-cookie></vl-header-cookie>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-header-authentication-cookie-fixture">
+    <template>
+      <vl-header-authentication-cookie></vl-header-authentication-cookie>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-authentication-cookie-fixture">
+    <template>
+      <vl-authentication-cookie></vl-authentication-cookie>
+    </template>
+  </test-fixture>
+
   <script>
     suite('vl-cookie', () => {
       test('toont de cookie titel', () => {
@@ -55,7 +73,7 @@
       });
 
       test('toont bij cookie extends de cookie titel', () => {
-        ['sticky-session', 'jsessionid'].forEach((id) => {
+        ['sticky-session', 'jsessionid', 'header', 'header-authentication', 'authentication'].forEach((id) => {
           const cookie = fixture(`vl-${id}-cookie-fixture`);
           const title = cookie.shadowRoot.querySelector('h1');
           assert.isDefined(title.textContent);
@@ -63,7 +81,7 @@
       });
 
       test('toont bij cookie extends de cookie gegevens op basis van constructie parameters', () => {
-        ['sticky-session', 'jsessionid'].forEach((id) => {
+        ['sticky-session', 'jsessionid', 'header', 'header-authentication', 'authentication'].forEach((id) => {
           const cookie = fixture(`vl-${id}-cookie-fixture`);
           const values = cookie.shadowRoot.querySelectorAll('[is="vl-property-value"]');
           assert.isDefined(values[0].textContent);
@@ -73,6 +91,16 @@
           assert.isDefined(values[4].textContent);
           assert.isDefined(values[5].textContent);
         });
+      });
+
+      test('toont de cookie naam als een lijst indien er meerdere namen van toepassing zijn', () => {
+        const cookie = fixture('vl-sticky-session-cookie-fixture');
+        const values = cookie.shadowRoot.querySelectorAll('[is="vl-property-value"]');
+        const list = values[0].querySelector('vl-typography').shadowRoot.querySelector('ul');
+        const listItems = list.querySelectorAll('li');
+        assert.lengthOf(listItems, 2);
+        assert.isDefined(listItems[0].textContent);
+        assert.isDefined(listItems[1].textContent);
       });
     });
   </script>

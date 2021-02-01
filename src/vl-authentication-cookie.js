@@ -2,9 +2,9 @@ import {define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 import {VlCookie} from '/src/vl-cookie.js';
 
 /**
- * VlJSessionIdCookie
+ * VlAuthenticationCookie
  * @class
- * @classdesc Session cookie beschrijving
+ * @classdesc Departement Omgeving authenticatie cookie beschrijving
  *
  * @extends VlCookie
  *
@@ -13,21 +13,20 @@ import {VlCookie} from '/src/vl-cookie.js';
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-cookie.html|Demo}
  *
  */
-export class VlJSessionIdCookie extends VlCookie {
+export class VlAuthenticationCookie extends VlCookie {
   constructor() {
     super({
-      title: 'Sessie cookie voor betere gebruikerservaring',
+      title: 'Departement Omgeving toegangsbeheer cookies',
       name: [
-        'JSESSIONID',
-        'KEYCLOAK_IDENTITY',
-        'KEYCLOAK_IDENTITY_LEGACY',
+        'KEYCLOAK_SESSION',
+        'KEYCLOAK_SESSION_LEGACY',
       ],
-      purpose: 'De cookie wordt gebruikt om een sessie tussen de applicatieserver en een gebruiker in stand te houden. Dankzij deze cookie kan een gebruiker door de server op een uniek manier geïdentificeerd worden.',
+      purpose: 'Sessiegebaseerde cookies die het mogelijk maken om gebruikers te herkennen op een webpagina van Departement Omgeving.',
       domain: window.location.hostname,
       processor: 'Departement Omgeving',
-      validity: 'Beperkt tot de duur van de sessie',
+      validity: '10 uur',
     });
   }
 }
 
-define('vl-jsessionid-cookie', VlJSessionIdCookie);
+define('vl-authentication-cookie', VlAuthenticationCookie);
