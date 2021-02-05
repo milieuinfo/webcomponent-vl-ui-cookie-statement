@@ -1,4 +1,1 @@
-module.exports = {
-  VlCookieStatement: require('../dist/vl-cookie-statement.src.js').VlCookieStatement,
-  VlCookie: require('../dist/vl-cookie.src.js').VlCookie,
-};
+export * from '../dist/vl-cookie-statement-all.src.js';

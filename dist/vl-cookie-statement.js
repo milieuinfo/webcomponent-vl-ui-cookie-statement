@@ -1,4 +1,5 @@
 import {vlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import '/node_modules/vl-ui-functional-header/dist/vl-functional-header.js';
 import '/node_modules/vl-ui-grid/dist/vl-grid.js';
 import '/node_modules/vl-ui-titles/dist/vl-titles.js';
 import '/node_modules/vl-ui-introduction/dist/vl-introduction.js';
@@ -9,7 +10,11 @@ import '/node_modules/vl-ui-properties/dist/vl-properties.js';
 import '/node_modules/vl-ui-link/dist/vl-link.js';
 import '/node_modules/vl-ui-icon/dist/vl-icon.js';
 import '/node_modules/vl-ui-side-navigation/dist/vl-side-navigation-all.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-header-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-header-authentication-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-authentication-cookie.js';
 import '/node_modules/vl-ui-cookie-statement/dist/vl-sticky-session-cookie.js';
+import '/node_modules/vl-ui-cookie-statement/dist/vl-jsessionid-cookie.js';
 
 /**
  * VlCookieStatement
@@ -37,6 +42,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
             @import '/node_modules/vl-ui-properties/dist/style.css';
             @import '/node_modules/vl-ui-side-navigation/dist/style.css';
         </style>
+        <vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Cookieverklaring" data-vl-link="https://omgeving.vlaanderen.be"></vl-functional-header>
     `);
 
     this._element.insertAdjacentHTML('afterend', `
@@ -100,6 +106,10 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
 
                                 <div id="cookie-usage" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     <h2 is="vl-h2">Gebruikte cookies</h2>
+                                    <vl-header-cookie></vl-header-cookie>
+                                    <vl-header-authentication-cookie></vl-header-authentication-cookie>
+                                    <vl-authentication-cookie></vl-authentication-cookie>
+                                    <vl-jsessionid-cookie></vl-jsessionid-cookie>
                                     <vl-sticky-session-cookie></vl-sticky-session-cookie>
                                     <slot></slot>
                                 </div>
