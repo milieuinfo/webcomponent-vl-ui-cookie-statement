@@ -72,7 +72,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                 <div is="vl-grid" data-vl-is-stacked>
                     <div is="vl-column" data-vl-size="8" data-vl-medium-size="8" data-vl-small-size="8" data-vl-extra-small-size="12">
                         <div is="vl-side-navigation-reference" data-vl--scrollspy-content>
-                            <div is="vl-grid" data-vl-is-stacked>
+                            <div is="vl-grid" data-vl-is-stacked-large>
                                 <div id="cookie-policy" is="vl-column" data-vl-size="12" data-vl-medium-size="12">
                                     <h2 is="vl-h2">Cookiebeleid</h2>
                                     <p>Departement Omgeving (verder ‘dOMG’) vindt het belangrijk dat u op iedere plaats en elk ogenblik haar dOMG-inhoud kan bekijken, beluisteren, lezen of beleven via diverse mediaplatformen. dOMG wil ook werken aan interactieve diensten en diensten op uw maat. Op dOMG-onlinediensten worden technieken gehanteerd om dit mogelijk te maken, bijvoorbeeld met behulp van cookies en scripts. Deze technieken worden hierna gemakkelijkheidshalve cookies genoemd. In dit cookiebeleid wenst dOMG u te informeren welke cookies worden gebruikt en waarom dit gebeurt. Verder wordt toegelicht in welke mate u als gebruiker het gebruik kan controleren. dOMG wil namelijk graag uw privacy en de gebruiksvriendelijkheid van haar onlinediensten zoveel mogelijk waarborgen.</p>
