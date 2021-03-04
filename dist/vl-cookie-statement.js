@@ -24,6 +24,9 @@ import '/node_modules/vl-ui-cookie-statement/dist/vl-jsessionid-cookie.js';
  * @extends HTMLElement
  * @mixes vlElement
  *
+ * @property {string} [data-vl-date="3 maart 2021"] - Attribuut wordt gebruikt om aan te geven op welke datum deze pagina opgesteld werd.
+ * @property {string} [data-vl-version="1.0.0"] - Attribuut wordt gebruikt om de pagina versie aan te geven.
+ *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-cookie-statement/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-cookie-statement.html|Demo}
@@ -45,6 +48,9 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
         <vl-functional-header data-vl-title="Departement Omgeving" data-vl-sub-title="Cookieverklaring" data-vl-link="https://omgeving.vlaanderen.be"></vl-functional-header>
     `);
 
+    const version = this.dataset.vlVersion || '1.0.0';
+    const date = this.dataset.vlDate || '3 maart 2021';
+
     this._element.insertAdjacentHTML('afterend', `
         <section is="vl-region">
             <div is="vl-layout">
@@ -54,7 +60,7 @@ export class VlCookieStatement extends vlElement(HTMLElement) {
                     </div>
                     <div is="vl-column" data-vl-size="10">
                         <p is="vl-introduction">
-                            <span>Versie</span> ${this.dataset.vlVersion} - ${this.dataset.vlDate}
+                            <span>Versie</span> <span id="introduction-version">${version}</span> - <span id="introduction-date">${date}</span>
                         </p>
                     </div>
 
