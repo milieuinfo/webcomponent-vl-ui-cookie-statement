@@ -6781,7 +6781,7 @@ a.vl-vi {
 
                     <div is="vl-column" data-vl-size="4" data-vl-medium-size="4" data-vl-small-size="4" data-vl-extra-small-size="0">
                         <nav is="vl-side-navigation" aria-label="inhoudsopgave">
-                            <h5 is="vl-side-navigation-h5">Op deze pagina</h5>
+                            <h2 is="vl-side-navigation-h2">Op deze pagina</h2>
                             <div is="vl-side-navigation-content">
                                 <ul is="vl-side-navigation-group">
                                     <li is="vl-side-navigation-item" data-vl-parent>

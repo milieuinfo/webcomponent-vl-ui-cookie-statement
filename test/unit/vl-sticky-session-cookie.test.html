@@ -20,7 +20,7 @@
     suite('vl-sticky-session-cookie', () => {
       test('toont de cookie titel', () => {
         const cookie = fixture('vl-sticky-session-cookie-fixture');
-        const title = cookie.shadowRoot.querySelector('h1');
+        const title = cookie.shadowRoot.querySelector('h3');
         assert.isDefined(title.textContent);
       });
 

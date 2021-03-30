@@ -41,7 +41,7 @@ export class VlCookie extends vlElement(HTMLElement) {
 
     this._element.insertAdjacentHTML('afterend', `
         <vl-properties>
-            <h1>${title || this.dataset.vlTitle}</h1>
+            <h3>${title || this.dataset.vlTitle}</h3>
             <dl is="vl-properties-list">
                 <dt is="vl-property-term">Naam</dt>
                 <dd is="vl-property-value">${nameTemplate()}</dd>
