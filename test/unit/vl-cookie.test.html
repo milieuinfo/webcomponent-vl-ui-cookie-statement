@@ -57,7 +57,7 @@
     suite('vl-cookie', () => {
       test('toont de cookie titel', () => {
         const cookie = fixture('vl-cookie-fixture');
-        const title = cookie.shadowRoot.querySelector('h1');
+        const title = cookie.shadowRoot.querySelector('h3');
         assert.equal(title.textContent, cookie.dataset.vlTitle);
       });
 
@@ -75,7 +75,7 @@
       test('toont bij cookie extends de cookie titel', () => {
         ['sticky-session', 'jsessionid', 'header', 'header-authentication', 'authentication'].forEach((id) => {
           const cookie = fixture(`vl-${id}-cookie-fixture`);
-          const title = cookie.shadowRoot.querySelector('h1');
+          const title = cookie.shadowRoot.querySelector('h3');
           assert.isDefined(title.textContent);
         });
       });
